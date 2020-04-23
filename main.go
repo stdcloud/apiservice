@@ -9,5 +9,8 @@ func main() {
 			"message": "pong",
 		})
 	})
+	r.GET("/version", func(c *gin.Context) {
+		c.String(200, "v2.0")
+	})
 	r.Run() // listen and serve on 0.0.0.0:8080
 }
