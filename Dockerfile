@@ -2,6 +2,6 @@ FROM golang:alpine as dev
 WORKDIR /
 COPY *.mod .
 COPY *.go .
-RUN export GO111MODULE=on
-RUN export GOPROXY=https://goproxy.cn
+RUN go env -w GO111MODULE=on
+RUN go env -w GOPROXY=https://goproxy.cn,direct
 RUN go build -o apiservice
