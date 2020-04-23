@@ -1,3 +1,4 @@
 FROM golang:alpine as dev
-WORKDIR $PWD
+WORKDIR /
+COPY *.go .
 RUN go build -o apiservice
